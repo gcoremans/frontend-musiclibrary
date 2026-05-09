@@ -1,2 +1,15 @@
 {{page-title "Artists"}}
 {{outlet}}
+
+
+<h1>Artists</h1>
+
+<ul>
+  {{#each @model as |artist|}}
+    <li>
+      {{artist.name}}
+    </li>
+  {{else}}
+    <li>No artists yet</li>
+  {{/each}}
+</ul>

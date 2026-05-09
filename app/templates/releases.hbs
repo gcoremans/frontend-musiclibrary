@@ -1,2 +1,14 @@
 {{page-title "Releases"}}
 {{outlet}}
+
+<h1>Releases</h1>
+
+<ul>
+  {{#each @model as |release|}}
+    <li>
+      {{release.credit}} - {{release.title}}
+    </li>
+  {{else}}
+    <li>No releases yet</li>
+  {{/each}}
+</ul>

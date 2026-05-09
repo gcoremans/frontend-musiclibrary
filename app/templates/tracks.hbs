@@ -1,2 +1,15 @@
 {{page-title "Tracks"}}
 {{outlet}}
+
+
+<h1>Tracks</h1>
+
+<ul>
+  {{#each @model as |track|}}
+    <li>
+      {{track.credit}} - {{track.title}}
+    </li>
+  {{else}}
+    <li>No tracks yet</li>
+  {{/each}}
+</ul>
