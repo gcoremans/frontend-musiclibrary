@@ -1,0 +1,9 @@
+{{page-title "All Artists"}}
+
+<ul>
+{{#each @model as |artist|}}
+    <li><LinkTo @route="artists.artist" @model={{artist.id}}>{{artist.name}}</LinkTo></li>
+{{else}}
+    No artists found.
+{{/each}}
+</ul>

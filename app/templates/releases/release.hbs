@@ -1,0 +1,10 @@
+{{page-title @model.title}}
+
+<h2>{{@model.title}} by {{#each @model.group.artists as |artist|}} <LinkTo @route="artists.artist" @model={{artist.id}}>{{artist.name}}</LinkTo>, {{else}} Unknown {{/each}}</h2>
+<ul>
+    {{#each @model.tracks as |track|}}
+        <li>{{track.title}}</li>
+    {{else}}
+        <li>No tracks found.</li>
+    {{/each}}
+</ul>

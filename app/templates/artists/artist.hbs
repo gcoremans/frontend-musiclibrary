@@ -1,0 +1,11 @@
+{{page-title @model.name}}
+
+<h2>{{@model.name}}</h2>
+
+<ul>
+    {{#each @model.albums as |album|}}
+        <li>{{album.title}}</li>
+    {{else}}
+        <li>No albums found.</li>
+    {{/each}}
+</ul>
