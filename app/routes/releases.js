@@ -6,6 +6,6 @@ export default class ReleasesRoute extends Route {
   @service store;
 
   model() {
-    return this.store.findAll('release');
+      return this.store.findAll('release', { include: ['group', 'group.artists', 'tracks'] });
   }
 }

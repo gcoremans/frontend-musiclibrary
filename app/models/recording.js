@@ -5,6 +5,6 @@ export default class RecordingModel extends Model {
     @attr('string') credit;
     @attr('string') duration;
 
-    @hasMany('artist', { async: true, inverse: "recordings" }) artists;
-    @hasMany('release', { async: true, inverse: "tracks" }) on;
+    @hasMany('artist', { async: false, inverse: "tracks" }) by;
+    @hasMany('release', { async: false, inverse: "tracks" }) on;
 }
