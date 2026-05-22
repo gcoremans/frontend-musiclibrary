@@ -1,0 +1,16 @@
+{{page-title "Releases"}}
+
+<h1>Releases</h1>
+
+{{#each @model as |release|}}
+    <h2>{{release.title}} by {{#each @release.artists as |artist|}} {{artist.name}}, {{else}} Unknown {{/each}}</h2>
+    <ul>
+            {{#each @release.tracks as |track|}}
+                <li>{{track.title}}</li>
+            {{else}}
+                <li>No tracks found.</li>
+            {{/each}}
+    </ul>
+{{else}}
+<p>No releases found.</p>
+{{/each}}
