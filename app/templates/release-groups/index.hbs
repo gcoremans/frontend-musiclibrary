@@ -1,0 +1,11 @@
+{{page-title "All Albums"}}
+
+{{#each @model as |releaseGroup|}}
+    <h2>
+        <LinkTo @route="release-groups.release-group" @model={{releaseGroup.id}}>{{releaseGroup.title}}</LinkTo>
+        by {{#each releaseGroup.artists as |artist|}} <LinkTo @route="artists.artist" @model={{artist.id}}>{{artist.name}}</LinkTo>, {{else}} Unknown {{/each}}
+    </h2>
+    <p>{{releaseGroup.releases.length}} releases.</p>
+{{else}}
+<p>No albums found.</p>
+{{/each}}

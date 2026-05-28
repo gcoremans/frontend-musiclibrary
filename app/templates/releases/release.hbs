@@ -1,6 +1,7 @@
 {{page-title @model.title}}
 
 <h2>{{@model.title}} by {{#each @model.group.artists as |artist|}} <LinkTo @route="artists.artist" @model={{artist.id}}>{{artist.name}}</LinkTo>, {{else}} Unknown {{/each}}</h2>
+<p>All versions of this release: <LinkTo @route="release-groups.release-group" @model={{@model.group.id}}>{{@model.group.title}}</LinkTo></p>
 <ul>
     {{#each @model.tracks as |track|}}
         <li>{{track.title}}</li>
