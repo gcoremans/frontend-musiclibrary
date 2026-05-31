@@ -2,6 +2,8 @@
 
 <h2>{{@model.name}}</h2>
 
+<FetchButton @kind="artist" @id={{@model.id}} />
+
 <ul>
     {{#each @model.albums as |album|}}
         <li><LinkTo @route='release-groups.release-group' @model={{album.id}}>{{album.title}}</LinkTo></li>
