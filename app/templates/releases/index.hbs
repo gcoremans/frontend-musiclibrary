@@ -1,7 +1,7 @@
 {{page-title "All Releases"}}
 
 {{#each @model as |release|}}
-        <h2><LinkTo @route="releases.release" @model={{release.id}}>{{release.title}}</LinkTo> by {{#each release.group.artists as |artist|}} <LinkTo @route="artists.artist" @model={{artist.id}}>{{artist.name}}</LinkTo>, {{else}} Unknown {{/each}}</h2>
+    <h2><LinkTo @route="releases.release" @model={{release.id}}>{{release.title}}</LinkTo> by {{#each release.group.artists as |artist|}} <LinkTo @route="artists.artist" @model={{artist.id}}>{{artist.name}}</LinkTo>, {{else}} Unknown {{/each}}</h2>
     <ul>
             {{#each release.tracks as |track|}}
                 <li>{{track.title}}</li>

@@ -1,6 +1,7 @@
 {{page-title @model.title}}
 
 <h2>{{@model.title}} by {{#each @model.artists as |artist|}} <LinkTo @route="artists.artist" @model={{artist.id}}>{{artist.name}}</LinkTo>, {{else}} Unknown {{/each}}</h2>
+<FetchButton @kind="release-group" @id={{@model.id}} />
 <ul>
     {{#each @model.releases as |release|}}
         <li><LinkTo @route="releases.release" @model={{release.id}}>{{release.title}}, {{release.format}}</LinkTo></li>
