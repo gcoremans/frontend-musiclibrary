@@ -1,3 +1,11 @@
-{{page-title "FrontendMusiclibrary"}}
+{{page-title "MusicLibrary"}}
+
+<p>a {{this.session.authenticated.data.relationships.account.data.id}}</p>
+
+{{#if this.session.isAuthenticated}}
+    <MuLogout />
+{{else}}
+    <MuLogin />
+{{/if}}
 
 {{outlet}}
