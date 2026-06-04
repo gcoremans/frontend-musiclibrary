@@ -1,11 +1,14 @@
 {{page-title "MusicLibrary"}}
 
-
+<p>
 {{#if this.session.isAuthenticated}}
     <p>Welcome, {{@model.name}}</p>
     <MuLogout />
 {{else}}
     <MuLogin />
 {{/if}}
+</p>
+
+<FetchField />
 
 {{outlet}}
