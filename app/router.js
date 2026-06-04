@@ -16,4 +16,5 @@ Router.map(function () {
   this.route('release-groups', function () {
       this.route('release-group', { path: ':release_group_id' })
   });
+  this.route('collections');
 });

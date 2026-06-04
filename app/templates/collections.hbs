@@ -1,0 +1,20 @@
+{{page-title "My Collections"}}
+
+<p>
+<Input @value={{this.name}} placeholder="My awesome collection" />
+<button type="button" {{on "click" this.newCollection}}>New collection</button>
+</p>
+
+{{#each @model as |collection|}}
+    <h2>{{collection.name}} by {{collection.owner.name}}</h2>
+    <p><button type="button" {{on "click" (fn this.deleteCollection collection)}}>Delete collection</button></p>
+    <ul>
+        {{#each collection.parts as |release|}}
+            <li><LinkTo @route="releases.release" @model={{release.id}}>{{release.title}}, {{release.format}}</LinkTo></li>
+        {{else}}
+            <li>Empty</li>
+        {{/each}}
+    </ul>
+{{else}}
+<p>No collections found.</p>
+{{/each}}
