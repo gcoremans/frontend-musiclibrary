@@ -5,6 +5,6 @@ export default class ReleaseModel extends Model {
     @attr('string') credit;
     @attr('string') format;
 
-    @belongsTo('release-group', { async: false, inverse: "releases" }) group;
-    @hasMany('recording', { async: false, inverse: "on" }) tracks;
+    @belongsTo('release-group', { async: true, inverse: "releases" }) group;
+    @hasMany('recording', { async: true, inverse: "on" }) tracks;
 }

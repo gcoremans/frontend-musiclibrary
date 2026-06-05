@@ -1,12 +1,12 @@
 <form {{on "submit" this.addToCollection}}>
     <span>
         <select name="collectionId" {{ on "change" this.changeSelection }}>
+                <option value="">Select collection</option>
             {{#each @collections as |c|}}
                 <option value={{c.id}}>{{c.name}}</option>
-            {{else}}
-                <option value="">No collections</option>
             {{/each}}
         </select>
         <button type="submit">Add to collection</button>
+        <span>{{this.message}}</span>
     </span>
 </form>

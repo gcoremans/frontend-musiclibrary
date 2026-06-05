@@ -17,7 +17,8 @@ export default class CollectionsController extends Controller {
             name: this.name,
             owner: acct
         });
-        newCollection.save();
+        this.name = "";
+        await newCollection.save();
     }
 
     @action

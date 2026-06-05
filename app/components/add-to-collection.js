@@ -6,16 +6,20 @@ import { service } from '@ember/service';
 export default class AddToCollection extends Component {
     @service store;
 
+    @tracked message;
+    
     collectionId = "";
     
     @action
     async addToCollection(event) {
         event.preventDefault();
         if(this.collectionId) {
-            let collection = await this.store.findRecord('collection', this.collectionId, { inclue: ["parts"] });
+            let collection = await this.store.findRecord('collection', this.collectionId, { include: ["parts"] });
             let release = await this.store.findRecord('release', this.args.releaseId);
-            collection.parts.push(release);
-            collection.save();
+            let parts = await collection.parts;
+            parts.push(release);
+            this.message = "Added!";
+            await collection.save();
         }
     }
 
