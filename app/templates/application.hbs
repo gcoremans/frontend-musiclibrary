@@ -1,6 +1,13 @@
 {{page-title "MusicLibrary"}}
 
 <p>
+    <LinkTo @route="collections">Collections</LinkTo> |
+    <LinkTo @route="artists">Artists</LinkTo> |
+    <LinkTo @route="release-groups">Albums</LinkTo> |
+    <LinkTo @route="releases">Releases</LinkTo>
+</p>
+
+<p>
 {{#if this.session.isAuthenticated}}
     <p>Welcome, {{@model.name}}</p>
     <MuLogout />
