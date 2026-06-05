@@ -12,7 +12,7 @@ export default class CollectionsController extends Controller {
 
     @action
     async newCollection() {
-        const acct = await this.store.findRecord('account', this.session.data.authenticated.data.relationships.account.data.id, { include: ['person'] });
+        const acct = await this.store.findRecord('account', this.session.data.authenticated.data.relationships.account.data.id);
         let newCollection = this.store.createRecord('collection', {
             name: this.name,
             owner: acct

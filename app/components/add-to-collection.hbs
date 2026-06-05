@@ -1,6 +1,6 @@
 <form {{on "submit" this.addToCollection}}>
     <span>
-        <select name="collectionId">
+        <select name="collectionId" {{ on "change" this.changeSelection }}>
             {{#each @collections as |c|}}
                 <option value={{c.id}}>{{c.name}}</option>
             {{else}}
