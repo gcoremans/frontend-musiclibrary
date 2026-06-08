@@ -1,5 +1,7 @@
 {{page-title "All Albums"}}
 
+<Pager @pagination={{@model.meta.pagination}}/>
+
 {{#each @model as |releaseGroup|}}
     <h2>
         <LinkTo @route="release-groups.release-group" @model={{releaseGroup.id}}>{{releaseGroup.title}}</LinkTo>

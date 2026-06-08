@@ -1,0 +1,9 @@
+<p>
+    {{#if (this.isANumber @pagination.prev.number)}}
+        <LinkTo @route={{this.router.currentRouteName}} @query={{hash page=@pagination.prev.number}}>prev</LinkTo>
+    {{/if}}
+    | {{@pagination.self.number}} | 
+    {{#if @pagination.next.number}}
+        <LinkTo @route={{this.router.currentRouteName}} @query={{hash page=@pagination.next.number}}>next</LinkTo>
+    {{/if}}
+</p>

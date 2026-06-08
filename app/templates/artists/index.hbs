@@ -1,5 +1,8 @@
 {{page-title "All Artists"}}
 
+
+<Pager @pagination={{@model.meta.pagination}}/>
+
 <ul>
 {{#each @model as |artist|}}
     <li><LinkTo @route="artists.artist" @model={{artist.id}}>{{artist.name}}</LinkTo></li>
